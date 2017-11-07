@@ -20,20 +20,24 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Новый автомобиль</div>
                 <div class="panel-body">
-                    <form role="form" method="POST">
+                    <form role="form" method="POST" action="/auto">
+                        <div class="form-group" style="display:none;">
+                            <label>Id</label>
+                            <input type="text" name="id" class="form-control" value="<%=auto ? auto.Id : '' %>">
+                        </div>
                         <div class="form-group">
                             <label>Название</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" class="form-control" value="<%=auto ? auto.Name : '' %>">
                         </div>
                         <div class="form-group">
                             <label>Год выпуска</label>
-                            <input type="number" id="year" name="year" class="form-control">
+                            <input type="number" id="year" name="year" class="form-control" value="<%=auto ? auto.Year : '' %>">
                         </div>
                         <div class="form-group">
                             <label>Цена</label>
-                            <input type="number" name="price" class="form-control">
+                            <input type="number" name="price" class="form-control" value="<%=auto ? auto.Price : '' %>">
                         </div>
-                        <input type="submit" class="btn btn-primary" value="Добавить">
+                        <input type="submit" class="btn btn-primary" value="<%=auto ? 'Обновить' : 'Добавить' %>">
                     </form>
                 </div>
             </div>
